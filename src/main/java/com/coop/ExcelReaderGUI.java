@@ -50,44 +50,44 @@ public class ExcelReaderGUI extends Application {
         // Crear el TableView donde se mostrarán las columnas
         tableView = new TableView<>();
 
-        // Definir las columnas de la tabla y ajustar su tamaño
+        // Definir las columnas de la tabla y ajustar su tamaño, incluyendo el tamaño de la fuente
         TableColumn<RowData, String> nombreCol = new TableColumn<>("Nombre");
         nombreCol.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        nombreCol.setMinWidth(150);  // Ancho mínimo
-        nombreCol.setPrefWidth(200); // Ancho preferido
+        nombreCol.setMinWidth(150);
+        nombreCol.setPrefWidth(200);
+        nombreCol.setStyle("-fx-font-size: 16px;");  // Ajustar el tamaño de la fuente
 
         TableColumn<RowData, String> apellidoCol = new TableColumn<>("Apellido");
         apellidoCol.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         apellidoCol.setMinWidth(150);
         apellidoCol.setPrefWidth(200);
+        apellidoCol.setStyle("-fx-font-size: 16px;");
 
         TableColumn<RowData, String> dispositivoCol = new TableColumn<>("Dispositivo");
         dispositivoCol.setCellValueFactory(new PropertyValueFactory<>("dispositivo"));
         dispositivoCol.setMinWidth(150);
         dispositivoCol.setPrefWidth(200);
+        dispositivoCol.setStyle("-fx-font-size: 16px;");
 
         TableColumn<RowData, String> horaEntradaCol = new TableColumn<>("Hora de Entrada");
         horaEntradaCol.setCellValueFactory(new PropertyValueFactory<>("horaEntrada"));
         horaEntradaCol.setMinWidth(200);
         horaEntradaCol.setPrefWidth(250);
-
-        // Comparator para ordenar las fechas de Hora de Entrada
-        horaEntradaCol.setComparator(Comparator.comparing(this::parseDate));
+        horaEntradaCol.setStyle("-fx-font-size: 16px;");
+        horaEntradaCol.setComparator(Comparator.comparing(this::parseDate));  // Ordenar por fecha
 
         TableColumn<RowData, String> horaSalidaCol = new TableColumn<>("Hora de Salida");
         horaSalidaCol.setCellValueFactory(new PropertyValueFactory<>("horaSalida"));
         horaSalidaCol.setMinWidth(200);
         horaSalidaCol.setPrefWidth(250);
-
-        // Comparator para ordenar las fechas de Hora de Salida
-        horaSalidaCol.setComparator(Comparator.comparing(this::parseDate));
+        horaSalidaCol.setStyle("-fx-font-size: 16px;");
+        horaSalidaCol.setComparator(Comparator.comparing(this::parseDate));  // Ordenar por fecha
 
         TableColumn<RowData, String> tiempoTranscurridoCol = new TableColumn<>("Tiempo Transcurrido");
         tiempoTranscurridoCol.setCellValueFactory(new PropertyValueFactory<>("tiempoTranscurrido"));
         tiempoTranscurridoCol.setMinWidth(150);
         tiempoTranscurridoCol.setPrefWidth(200);
-
-        // Comparator para ordenar por tiempo transcurrido
+        tiempoTranscurridoCol.setStyle("-fx-font-size: 16px;");
         tiempoTranscurridoCol.setComparator((time1, time2) -> {
             long horas1 = getHoursFromTimeString(time1);
             long horas2 = getHoursFromTimeString(time2);

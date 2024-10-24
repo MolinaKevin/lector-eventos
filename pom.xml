@@ -74,6 +74,18 @@
                     <mainClass>com.coop.ExcelReaderGUI</mainClass> <!-- Asegúrate de que el nombre del paquete y la clase principal sea correcto -->
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.coop.ExcelReaderGUI</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
